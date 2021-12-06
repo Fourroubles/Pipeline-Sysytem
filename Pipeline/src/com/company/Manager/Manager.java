@@ -1,5 +1,6 @@
 package com.company.Manager;
 
+import com.company.SyntaticAnalysis;
 import com.java_polytech.pipeline_interfaces.*;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
@@ -26,8 +27,8 @@ public class Manager implements IConfigurable {
 
     @Override
     public RC setConfig(String str) {
-        ManagerConfig managerConfig = new ManagerConfig(RC.RCWho.MANAGER);
-        RC error = managerConfig .syntacticAnalysis(str);
+        SyntaticAnalysis managerConfig = new SyntaticAnalysis(RC.RCWho.MANAGER, new ManagerConfig());
+        RC error = managerConfig.syntacticAnalysis(str);
 
         if(!error.isSuccess()) {
             return error;
@@ -92,6 +93,7 @@ public class Manager implements IConfigurable {
         }
 
         for(int i = 0; i < executor.length - 1; ++i) {
+
             error = executor[i].setConsumer(executor[i + 1]);
             if (!error.isSuccess()) {
                 return error;
@@ -146,7 +148,6 @@ public class Manager implements IConfigurable {
             }
         }
         catch (Exception ex) {
-            System.out.println(readerName);
             return RC.RC_MANAGER_INVALID_READER_CLASS;
         }
 

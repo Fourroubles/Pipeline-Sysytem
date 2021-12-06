@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class KelarevReader implements IReader {
     private InputStream inputStream;
-    private byte buffer[];
+    private byte[] buffer;
     private IConsumer consumer;
     private int buffSize;
 
@@ -25,11 +25,18 @@ public class KelarevReader implements IReader {
         int lastSizeBuff;
         try {
             while ((lastSizeBuff = inputStream.available()) > 0) {
+
                 if(lastSizeBuff > buffSize) {
-                    lastSizeBuff = buffSize;
+                    inputStream.read(buffer, 0, buffSize);
+                }
+                else {
+                    inputStream.read(buffer, 0, lastSizeBuff);
                 }
 
-                inputStream.read(buffer, 0, lastSizeBuff);
+                if(buffer == null)
+                {
+                    return new RC(RC.RCWho.READER, RC.RCType.CODE_CUSTOM_ERROR, "Memory is not allocated");
+                }
                 RC error = consumer.consume(buffer);
 
                 if(!error.isSuccess()) {
@@ -59,8 +66,9 @@ public class KelarevReader implements IReader {
 
     @Override
     public RC setConfig(String s) {
-        ReaderConfig readerConfig = new ReaderConfig(RC.RCWho.READER);
-        RC error =  readerConfig .syntacticAnalysis(s);
+
+        SyntaticAnalysis readerConfig = new SyntaticAnalysis(RC.RCWho.READER, new ReaderConfig());
+        RC error = readerConfig.syntacticAnalysis(s);
 
         if(!error.isSuccess()) {
             return error;

@@ -2,7 +2,7 @@ INPUT_FILE: Resourse\input.txt
 OUTPUT_FILE: Resourse\output.txt
 READER_NAME: com.company.KelarevReader
 WRITER_NAME: com.company.KelarevWriter
-EXECUTOR_NAME: com.company.KelarevExecutor, com.company.KelarevExecutor
+EXECUTOR_NAME:  com.company.KelarevExecutor, com.company.KelarevExecutor
 READER_CONFIG: Configs\reader_config.txt
 WRITER_CONFIG: Configs\writer_config.txt
-EXECUTOR_CONFIG: Configs\executor_config.txt, Configs\executor_config2.txt
+EXECUTOR_CONFIG:  Configs\executor_config2.txt, Configs\executor_config.txt

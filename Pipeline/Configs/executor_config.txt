@@ -1,2 +1,2 @@
-side: L
-shift: 4
+SIDE: R
+SHIFT: 4

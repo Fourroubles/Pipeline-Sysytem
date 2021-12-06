@@ -38,8 +38,9 @@ public class KelarevWriter implements IWriter {
 
     @Override
     public RC setConfig(String s) {
-        WriterConfig writerConfig = new WriterConfig(RC.RCWho.WRITER);
-        RC error =  writerConfig.syntacticAnalysis(s);
+
+        SyntaticAnalysis writerConfig = new SyntaticAnalysis(RC.RCWho.WRITER, new WriterConfig());
+        RC error = writerConfig.syntacticAnalysis(s);
 
         if(!error.isSuccess()) {
             return error;
