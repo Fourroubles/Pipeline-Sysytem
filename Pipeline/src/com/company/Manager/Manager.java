@@ -4,8 +4,12 @@ import com.company.SyntaticAnalysis;
 import com.java_polytech.pipeline_interfaces.*;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
+import java.util.logging.*;
 
 public class Manager implements IConfigurable {
+
+    private Logger logger = Logger.getLogger(Manager.class.getName());
+
     private IReader reader;
     private IExecutor[] executor;
     private IWriter writer;
@@ -131,6 +135,7 @@ public class Manager implements IConfigurable {
 
     public RC buildPipeline(String str) {
         RC error;
+        logger.info("Start creating pipeline...");
         error = setConfig(str);
 
         if(!error.isSuccess()) {
@@ -199,6 +204,7 @@ public class Manager implements IConfigurable {
             return error;
         }
 
+        logger.info("End working pipeline...");
         return RC.RC_SUCCESS;
     }
 }

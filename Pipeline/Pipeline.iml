@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/Artifacts/PipelineInterfaces.jar!/" />
+          <root url="jar://$MODULE_DIR$/../KelarevExecutor/out/artifacts/KelarevExecutor_jar/KelarevExecutor.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/Artifacts/KelarevReader.jar!/" />
+          <root url="jar://$MODULE_DIR$/../KelarevReader/out/artifacts/KelarevReader_jar/KelarevReader.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,7 +28,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/Artifacts/KelarevExecutor.jar!/" />
+          <root url="jar://$MODULE_DIR$/../KelarevWriter/out/artifacts/KelarevWriter_jar/KelarevWriter.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -37,7 +37,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/Artifacts/KelarevWriter.jar!/" />
+          <root url="jar://$MODULE_DIR$/Artifacts/Pipeline2Interfaces.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -46,7 +46,34 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/Artifacts/IGrammar.jar!/" />
+          <root url="jar://$MODULE_DIR$/../IGrammar/out/artifacts/IGrammar_jar/IGrammar.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/Artifacts/LZW_Executor.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/Artifacts/LZW_Reader.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/Artifacts/LZW_Writer.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

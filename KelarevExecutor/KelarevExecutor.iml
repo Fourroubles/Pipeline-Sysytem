@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/PipelineInterfaces.jar!/" />
+          <root url="jar://$MODULE_DIR$/Pipeline2Interfaces-main.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

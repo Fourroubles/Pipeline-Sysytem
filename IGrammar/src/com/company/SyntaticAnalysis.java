@@ -31,9 +31,15 @@ public class SyntaticAnalysis {
             String line = bufferedReader.readLine();
 
             while (line != null) {
+
+                if(line.isEmpty() || line.replaceAll("\\s+","").split("//")[0].length() == 0){
+                    line = bufferedReader.readLine();
+                    continue;
+                }
                 if(!checkConfig(line)) {
                     return new RC(name, RC.RCType.CODE_CONFIG_FILE_ERROR, line + ": Invalid string");
                 }
+
                 line = bufferedReader.readLine();
             }
 
